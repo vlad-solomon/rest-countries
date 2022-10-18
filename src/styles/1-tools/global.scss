@@ -1,0 +1,72 @@
+.page-content {
+	max-width: 1280px;
+	padding-top: 160px;
+	margin: 0 auto;
+	position: relative;
+}
+
+// *::-webkit-scrollbar {
+// 	display: none;
+// }
+
+.App {
+	min-height: 100vh;
+	background-color: var(--light-gray);
+}
+
+.App.dark {
+	background-color: var(--dark-gray);
+	.header {
+		background-color: var(--light-dark);
+		* {
+			color: var(--white);
+			fill: var(--white);
+		}
+	}
+	.input-wrapper > div {
+		background-color: var(--light-dark);
+		* {
+			color: var(--white);
+			fill: var(--white);
+		}
+		input {
+			&::placeholder {
+				color: var(--white);
+			}
+		}
+	}
+	.card {
+		background-color: var(--light-dark);
+		* {
+			color: var(--white);
+		}
+	}
+	.detail-page {
+		background-color: var(--light-dark);
+		.button {
+			background-color: var(--light-dark);
+			color: var(--white);
+			box-shadow: var(--box-shadow-dark);
+		}
+		&__details {
+			* {
+				color: var(--white);
+			}
+		}
+		.border-countries__country {
+			background-color: var(--light-dark);
+			box-shadow: var(--box-shadow-dark);
+		}
+	}
+	.filter-input {
+		&__options {
+			background-color: var(--light-dark);
+			box-shadow: var(--box-shadow-dark);
+		}
+		&__option {
+			&:hover {
+				background-color: var(--dark-gray);
+			}
+		}
+	}
+}

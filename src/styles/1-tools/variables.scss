@@ -1,0 +1,21 @@
+:root {
+	font-size: 16px;
+
+	// dark theme
+	--light-dark: #2b3945;
+	--dark-gray: #202c37;
+	--black: #111517;
+
+	// light theme
+	--gray: #858585;
+	--light-gray: #fafafa;
+	--white: #fff;
+
+	--border-radius: 5px;
+	--box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.04);
+	--box-shadow-dark: 0px 10px 20px rgba(0, 0, 0, 0.1), 0px 6px 6px rgba(0, 0, 0, 0.1);
+
+	--font-light: 300;
+	--font-semi-bold: 600;
+	--font-extra-bold: 800;
+}
