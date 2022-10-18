@@ -4,6 +4,8 @@ import "./styles/main.scss";
 import ThemeContext from "./context/ThemeContext";
 import CountryContext from "./context/CountryContext";
 
+import { InputsProvider } from "./context/InputsContext";
+
 import Header from "./components/Header";
 import Inputs from "./components/Inputs";
 import Grid from "./components/Grid";
@@ -17,7 +19,9 @@ function App() {
 			<Header />
 			{Object.keys(selectedCountry).length ? <DetailPage /> : ""}
 			<div className="page-content">
-				<Inputs />
+				<InputsProvider>
+					<Inputs />
+				</InputsProvider>
 				<Grid />
 			</div>
 		</div>
