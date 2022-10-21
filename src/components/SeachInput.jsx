@@ -6,7 +6,7 @@ import InputsContext from "../context/InputsContext";
 import CountryContext from "../context/CountryContext";
 
 function SeachInput() {
-	const { search, setSearch, setRegion, isShowing, setIsShowing, region } = useContext(InputsContext);
+	const { search, setSearch, region, setRegion, isShowing, setIsShowing } = useContext(InputsContext);
 	const { data, setCountries } = useContext(CountryContext);
 
 	const inputRef = useRef();
@@ -14,7 +14,7 @@ function SeachInput() {
 	useEffect(() => {
 		isShowing && setIsShowing(false);
 		if (!region) {
-			const filter = data.filter((country) => country.name.common.toLowerCase().includes(search));
+			const filter = data.filter((country) => country.name.common.toLowerCase().includes(search.toLowerCase()));
 			setCountries(filter);
 		}
 	}, [search]);
@@ -26,11 +26,12 @@ function SeachInput() {
 				<input
 					ref={inputRef}
 					autoComplete="new-password"
+					spellCheck="false"
 					type="text"
 					placeholder="Search for a country..."
 					value={search}
 					onChange={(e) => {
-						setSearch(e.target.value.toLowerCase());
+						setSearch(e.target.value);
 						setRegion("");
 					}}
 				/>

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { formatNumber } from "../helpers";
 
 import CountryContext from "../context/CountryContext";
@@ -8,6 +8,8 @@ function DetailPage() {
 	const { data, selectedCountry, setSelectedCountry } = useContext(CountryContext);
 	const [borders, setBorders] = useState([]);
 
+	const detailPageRef = useRef();
+
 	useEffect(() => {
 		if (selectedCountry.borders) {
 			setBorders([]);
@@ -15,10 +17,10 @@ function DetailPage() {
 				setBorders((prev) => [...prev, ...data.filter((country) => country.cca3 === neighbor)]);
 			});
 		}
-	}, [selectedCountry]);
+	}, [data, selectedCountry]);
 
 	return (
-		<div className="detail-page">
+		<div className="detail-page" ref={detailPageRef}>
 			<div className="content-wrapper">
 				<div
 					className="button"
@@ -91,9 +93,16 @@ function DetailPage() {
 								<div className="border-countries__wrapper">
 									{borders.map((country, index) => {
 										return (
-											<span className="border-countries__country" key={index} onClick={() => setSelectedCountry(country)}>
-												{country.name.common}
-											</span>
+											<div
+												className="border-countries__country"
+												key={index}
+												onClick={() => {
+													setSelectedCountry(country);
+													detailPageRef.current.scrollTo(0, 0);
+												}}
+											>
+												<span>{country.name.common}</span>
+											</div>
 										);
 									})}
 								</div>

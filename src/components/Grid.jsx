@@ -2,20 +2,26 @@ import { useContext } from "react";
 import Card from "./Card";
 
 import CountryContext from "../context/CountryContext";
+import InputsContext from "../context/InputsContext";
 
 function Grid() {
-	const { data, countries } = useContext(CountryContext);
+	const { countries } = useContext(CountryContext);
+	const { search } = useContext(InputsContext);
 
 	return (
-		<div className="grid">
-			{data.length
-				? countries.length
-					? countries.map((country, index) => {
-							return <Card key={index} country={country} />;
-					  })
-					: "Country not found!"
-				: "Loading countries..."}
-		</div>
+		<>
+			{countries.length ? (
+				<div className="grid">
+					{countries.map((country, index) => {
+						return <Card key={index} country={country} />;
+					})}
+				</div>
+			) : (
+				<div className="grid--empty">
+					<em>"{search}"</em> not found...
+				</div>
+			)}
+		</>
 	);
 }
 

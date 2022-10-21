@@ -6,7 +6,7 @@ export function ThemeProvider({ children }) {
 	const [theme, setTheme] = useState("light");
 
 	useEffect(() => {
-		const hour = new Date();
+		const hour = new Date().getHours();
 		setTheme(hour <= 16 && hour >= 8 ? "light" : "dark");
 	}, []);
 
