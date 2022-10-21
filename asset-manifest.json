@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/rest-countries/static/css/main.dc7e6c58.css",
+    "main.css": "/rest-countries/static/css/main.4ceb5fea.css",
     "main.js": "/rest-countries/static/js/main.6b01f0b9.js",
     "index.html": "/rest-countries/index.html",
     "static/media/Moon.svg": "/rest-countries/static/media/Moon.183ff01c50a87d6a31c77bb1e789fc5d.svg",
@@ -10,7 +10,7 @@
     "static/media/Expand.svg": "/rest-countries/static/media/Expand.4960b56f69ee6a33e2df51a7568a122f.svg"
   },
   "entrypoints": [
-    "static/css/main.dc7e6c58.css",
+    "static/css/main.4ceb5fea.css",
     "static/js/main.6b01f0b9.js"
   ]
 }
